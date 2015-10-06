@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using EvePasteNet.Parsers.EFT;
-using EFT.Models;
 
 namespace EvePasteNet.Tests.Parsers.EFT
 {
@@ -156,6 +155,36 @@ namespace EvePasteNet.Tests.Parsers.EFT
             var lines = eftRaw.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
             var parseResults = p.Parse(lines);
+        }
+
+        [TestMethod]
+        public void NoModules()
+        {
+            var eftRaw = @"[Retribution, ,,,ss]]
+
+[Empty Low slot]
+[Empty Low slot]
+[Empty Low slot]
+[Empty Low slot]
+[Empty Low slot]
+
+[Empty Med slot]
+[Empty Med slot]
+
+[Empty High slot]
+[Empty High slot]
+[Empty High slot]
+[Empty High slot]
+[Empty High slot]
+
+[Empty Rig slot]
+[Empty Rig slot]";
+
+            var p = new EvePasteNet.Parsers.EFT.ParseEFT();
+            var lines = eftRaw.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var parseResults = p.Parse(lines);
+
+            
         }
     }
 }

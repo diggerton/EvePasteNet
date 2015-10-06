@@ -1,6 +1,4 @@
-﻿using EFT.Models;
-
-using EvePasteNet.Parsers.EFT.Models;
+﻿using EvePasteNet.Parsers.EFT.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,7 +22,7 @@ namespace EvePasteNet.Parsers.EFT
         public Ship Parse(IList<string> lines)
         {
             lines = lines.Where(l => !string.IsNullOrWhiteSpace(l))
-                .Where(l => !blacklist.Contains(l.Trim()))
+                .Where(l => !blacklist.Contains(l.ToLowerInvariant().Trim()))
                 .Select(l=>l.Trim())
                 .ToList();
 

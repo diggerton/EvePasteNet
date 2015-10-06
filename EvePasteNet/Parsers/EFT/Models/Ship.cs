@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFT.Models
+namespace EvePasteNet.Parsers.EFT.Models
 {
     public class Ship
     {

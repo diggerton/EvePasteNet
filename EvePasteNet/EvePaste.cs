@@ -1,5 +1,5 @@
-﻿using EFT.Models;
-using EvePasteNet.Parsers.EFT;
+﻿using EvePasteNet.Parsers.EFT;
+using EvePasteNet.Parsers.EFT.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
